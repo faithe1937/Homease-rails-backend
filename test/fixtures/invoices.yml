@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  material_name: MyString
+  material_cost: 1.5
+  labor_name: MyString
+  labor_cost: 1.5
+
+two:
+  project: two
+  material_name: MyString
+  material_cost: 1.5
+  labor_name: MyString
+  labor_cost: 1.5
