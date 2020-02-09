@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_30_004343) do
+ActiveRecord::Schema.define(version: 2020_02_09_212321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "invoices", force: :cascade do |t|
     t.bigint "project_id", null: false
-    t.string "material_name"
-    t.float "material_cost"
-    t.string "labor_name"
-    t.float "labor_cost"
+    t.integer "qty"
+    t.float "unitprice"
+    t.string "description"
+    t.float "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_invoices_on_project_id"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2020_01_30_004343) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "budget"
+    t.date "duedate"
     t.index ["contractor_id"], name: "index_projects_on_contractor_id"
     t.index ["homeowner_id"], name: "index_projects_on_homeowner_id"
   end
