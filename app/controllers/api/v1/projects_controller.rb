@@ -1,6 +1,6 @@
 class Api::V1::ProjectsController < ApplicationController
-
-    before_action :set_project, only:[:show, :update, :destroy]
+  skip_before_action :authorized, only: [:create, :index, :show, :update, :destroy]
+    # before_action :set_project, only:[:show, :update, :destroy, :index]
 
     def index
         @projects = Project.all
@@ -35,9 +35,9 @@ class Api::V1::ProjectsController < ApplicationController
       end
     
       private
-        def set_project
-          @project = project.find(params[:id])
-        end
+        # def set_project
+        #   @project = project.find(params[:id])
+        # end
     
         # Only allow a trusted parameter "white list" through.
         def project_params
