@@ -1,5 +1,7 @@
 class Api::V1::InvoicesController < ApplicationController
-    before_action :set_invoice, only:[:show, :update, :destroy]
+    # before_action :set_invoice, only:[:show, :update, :destroy]
+    skip_before_action :authorized, only: [:create, :index, :show, :update, :destroy]
+
 
     def index
         @invoices = Invoice.all
@@ -34,9 +36,9 @@ class Api::V1::InvoicesController < ApplicationController
       end
     
       private
-        def set_invoice
-          @invoice = Invoice.find(params[:id])
-        end
+        # def set_invoice
+        #   @invoice = Invoice.find(params[:id])
+        # end
     
         # Only allow a trusted parameter "white list" through.
         def invoice_params
