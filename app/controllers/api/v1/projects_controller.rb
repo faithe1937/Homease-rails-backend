@@ -4,15 +4,16 @@ class Api::V1::ProjectsController < ApplicationController
 
     def index
         @projects = Project.all
-        render json: @projects
+        render json: @projects, include: [:homeowner, :contractor]
     end 
 
     def show
-        render json: @project
+      @project = Project.find(params[:id])
+      render json: @project, include: [:homeowner, :contractor]
     end 
 
     def create
-        @project = project.new(project_params)
+        @project = Project.new(project_params)
 
         if @project.save
             render json: @project, status: :create, location: @project
