@@ -4,4 +4,6 @@ class User < ApplicationRecord
     # validates :email, :password_digest, :firstname, presence: true 
    
     has_many :projects
+    # has_many :posts, through: :projects
+    # has_many :invoices, through: :projects
   end
