@@ -3,4 +3,5 @@ class Project < ApplicationRecord
   belongs_to :contractor, :class_name => "User"
   has_many :invoices
   has_many :posts
+  has_many :lists
 end

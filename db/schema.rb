@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_211039) do
+ActiveRecord::Schema.define(version: 2020_02_11_145648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2020_02_10_211039) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_invoices_on_project_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "catergory"
+    t.text "task"
+    t.boolean "active"
+    t.bigint "projects_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["projects_id"], name: "index_lists_on_projects_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -60,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_211039) do
   end
 
   add_foreign_key "invoices", "projects"
+  add_foreign_key "lists", "projects", column: "projects_id"
   add_foreign_key "posts", "projects"
   add_foreign_key "posts", "users"
   add_foreign_key "projects", "users", column: "contractor_id"
