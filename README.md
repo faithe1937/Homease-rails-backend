@@ -2,6 +2,12 @@
 
 Homease API that serves JSON resources to a React client-side framework.  
 
+### Features 
+- [x] Tools like Rack and the Rails Router to handle the HTTP layer smoothly
+- [x] Configuration and Integration of database connection - using PostgresSQL database
+- [x] Dynamically generating URLs for resources
+- [x] Authentication using JSON Web Tokens (JWT) 
+
 ### For developers
 Clone the source locally:
 
