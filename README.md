@@ -1,24 +1,30 @@
-# README
+# Project : Homease API Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Homease API that serves JSON resources to a React client-side framework.  
 
-Things you may want to cover:
+### For developers
+Clone the source locally:
 
-* Ruby version
+```sh
+$ git clone 
+$ cd Homease-rails-backend
+```
+### Check your Ruby version
 
-* System dependencies
+```shell
+ruby -v
+```
+The ouput should start with something like `ruby 2.6.3`
 
-* Configuration
+### Install dependencies
 
-* Database creation
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
 
-* Database initialization
+```shell
+bundle && yarn
+```
+## Serve
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+rails s
+```
