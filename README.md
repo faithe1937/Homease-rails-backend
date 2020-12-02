@@ -36,4 +36,4 @@ rails s
 ```
 
 ## Documentation
-- [Ruby](https://https://rubyonrails.org/)
+- [Ruby on Rails](https://https://rubyonrails.org/)
